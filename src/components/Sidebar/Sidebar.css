@@ -1,0 +1,138 @@
+.container{
+  position: fixed;
+  z-index: 1000;
+  background-color: #f0f4f9;
+}
+.sidebar {
+  min-height: 100vh;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 25px 15px;
+  transition: transform 0.3s ease;
+  /* Smooth transition for showing/hiding */
+  position: relative;
+  /* Ensure the parent is relatively positioned */
+}
+
+.sidebar.dark-theme {
+  background-color: #222222;
+  color: #e2e5eb;
+}
+
+ .icons {
+  font-size: 20px;
+  display: inline-block;
+}
+
+.sidebar .menu {
+  display: block;
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 25px;
+}
+
+.sidebar .new-chat {
+  margin-top: 50px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 10px;
+  background-color: #e6eaf1;
+  border-radius: 50px;
+  color: grey;
+  cursor: pointer;
+}
+
+.sidebar .new-chat.dark-theme {
+  color: #7e7e7e;
+  background-color: #000000;
+  font-weight: 600;
+}
+
+
+
+.sidebar .recent {
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 1.5s;
+}
+
+.sidebar .recent-title {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.icons.dark-theme {
+  color: #e2e5eb;
+}
+
+.sidebar .bottom-item:hover {
+  background-color: #e2e5eb;
+}
+
+.sidebar .bottom-item.dark-theme:hover {
+  background-color: #595959;
+}
+
+.sidebar .bottom {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar .bottom-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  padding-right: 15px;
+  cursor: pointer;
+  gap: 10px;
+  color: #282828;
+  border-radius: 50px;
+}
+
+.sidebar .bottom-item.dark-theme {
+  color: #e2e5eb;
+}
+
+/* Small screens sidebar hidden */
+@media (max-width: 900px) {
+  
+  .sidebar {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+  }
+
+ 
+  .sidebar.visible {
+    display: flex;
+    transform: translateX(0);
+    z-index: 999;
+  }
+.menu{
+  visibility: hidden;
+}
+  /* Style the small menu button */
+  .small-menu {
+    visibility: visible;
+    position: absolute;
+    /* Absolute positioning, so it doesn't affect layout */
+    margin: 25px 25px;
+    /* Use margin to position it */
+    cursor: pointer;
+    font-size: 25px;
+    /* Set font size to 35px */
+    color: inherit;
+    /* Use current theme colors */
+    z-index: 10000;
+    /* Ensure it stays above other elements */
+    display: inline-flex;
+    /* Ensure the container wraps around the icon */
+    justify-content: center;
+    /* Center the icon inside the container */
+    align-items: center;
+  }
+}

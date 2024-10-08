@@ -1,0 +1,283 @@
+.main {
+  flex: 1;
+  min-height: 100vh;
+  padding-bottom: 15vh;
+  position: relative;
+margin-left: 5rem;
+}
+
+.main .nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 22px;
+  padding: 20px 20px 0px 20px;
+  color: #585858;
+}
+.main .nav p{
+  margin-left: 4rem;
+  margin-top: -0.2rem;
+  z-index: 1000;
+}
+
+.main.dark-theme .nav p {
+  color: #ffffff;
+}
+
+
+
+.main .nav img {
+  width: 40px;
+  border-radius: 50%;
+}
+
+.main-container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.main .greet {
+  margin: 30px 0px;
+  font-size: 56px;
+  color: #c4c7c5c9;
+  font-weight: 500;
+  padding: 20px;
+}
+.greet.dark-theme{
+  color: #c4c7c537;
+}
+
+.main .greet span {
+  background: -webkit-linear-gradient(16deg, #4b90ff, #ff5546);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.main .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 15px;
+  padding: 20px;
+}
+
+.main .cards.dark-theme .card {
+  background-color: rgb(32, 32, 32);
+}
+
+.main .cards.dark-theme .card p {
+  color: white;
+}
+
+.main .cards.dark-theme .card .icons {
+  background-color: rgb(0, 0, 0);
+}
+
+.main .cards.dark-theme .card:hover {
+  background-color: rgb(62, 62, 62);
+  color: white;
+}
+
+.main .card {
+  height: 200px;
+  padding: 15px;
+  background-color: #f0f4f9;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+.main .card .icons {
+  font-size: 35px;
+  padding: 5px;
+  position: absolute;
+  background-color: white;
+  color: #404040;
+  border-radius: 20px;
+  bottom: 10px;
+  right: 10px;
+}
+
+
+.main .card p {
+  color: #585858;
+  font-size: 17px;
+}
+
+.main .card:hover {
+  background-color: #dfe4ea;
+}
+
+.main-bottom {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  max-width: 900px;
+  padding: 0px 20px;
+  margin: auto;
+  background-color: white;
+  border: none;
+  outline: none;
+}
+
+.main-bottom.dark-theme {
+  background-color: #121212;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #f0f4f9;
+  border-radius: 50px;
+
+}
+
+.search-box.dark-theme {
+background-color: rgb(32, 32, 32);
+  color: #ffffff;
+}
+
+.search-box.dark-theme input {
+  background-color: rgb(32, 32, 32);
+  color: #ffffff;
+}
+
+.search-box.dark-theme input::placeholder {
+  color: #bdbbbb;
+}
+
+.search-box img {
+  width: 24px;
+  cursor: pointer;
+}
+
+.search-box input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 8px;
+  font-family: 18px;
+  font-size: 17px;
+}
+
+.search-box div {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+
+.main .bottom-info {
+  font-size: 10px;
+  margin: 8px auto;
+  text-align: center;
+  font-weight: 300;
+}
+
+
+.result {
+  padding: 0px 5%;
+  max-height: 70vh;
+  overflow-y: scroll;
+}
+
+.result::-webkit-scrollbar {
+  display: none;
+}
+
+.result-title {
+  margin: 40px 0px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.result img {
+  width: 40px;
+  border-radius: 50%;
+}
+
+.result-data {
+  display: flex;
+  align-items: start;
+  gap: 20px;
+}
+
+.loader {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.loader hr {
+  border-radius: 4px;
+  border: none;
+  background-color: #f6f7f8;
+  background: linear-gradient(to right, #9ed7ff, #ffffff, #9ed7ff);
+  background-size: 800px 50px;
+  height: 20px;
+  animation: loader 3s infinite linear;
+}
+.loader.dark-theme hr{
+  background: linear-gradient(to right,#000000,#323232,#9ed7ff,#323232 ,#000000);
+}
+
+@keyframes loader {
+
+  0% {
+    background-position: -800px 0px;
+  }
+
+  100% {
+    background-position: 800px 0px;
+  }
+
+}
+
+.result-data p {
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+@media(max-width:900px) {
+.main{
+  margin-left: 0;
+}
+  .main .greet{
+    font-size: 2.3rem;
+  }
+  .main .nav {
+    margin-left: 3.5rem;
+    margin-top: -0.1rem;
+  }
+
+  .main .nav p {
+    position: relative;
+    z-index: 10000;
+  }
+
+  .card {
+    margin-bottom: 1rem;
+  }
+
+  .main-bottom input {
+    flex: none;
+    width: 150px;
+  }
+
+  .main-bottom img {
+    width: 20px;
+  }
+
+  .search-box {
+    padding: 5px, 10px;
+  }
+
+  .search-box div {
+    gap: 5px;
+  }
+}
